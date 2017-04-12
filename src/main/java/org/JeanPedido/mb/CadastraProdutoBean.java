@@ -6,7 +6,9 @@
 package org.JeanPedido.mb;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+import org.JeanPedidos.DAO.ProdutoDAO;
 import org.JeanPedidos.modelo.Produto;
 
 /**
@@ -16,15 +18,17 @@ import org.JeanPedidos.modelo.Produto;
 @Named(value = "cadastrarProdutoBean")
 @RequestScoped
 public class CadastraProdutoBean {
-
+            
     Produto produto = new Produto();
+    @Inject
+    ProdutoDAO produtoDAO;
+    
+    public void adicionar() {
+        produtoDAO.salvar(produto);
+        //System.out.println(produto);
+    }
 
     public Produto getProduto() {
         return produto;
-    }
-
-    public void adicionar() {
-        // produtoDAO.salvar(produto);
-        System.out.println(produto);
     }
 }

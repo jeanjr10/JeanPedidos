@@ -15,6 +15,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
+      <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>6.0.4</version>
+</dependency>
+
     <dependency>
       <groupId>org.jboss.spec.javax.faces</groupId>
       <artifactId>jboss-jsf-api_2.1_spec</artifactId>
@@ -33,6 +40,18 @@
     <dependency>
       <groupId>javax.annotation</groupId>
       <artifactId>jsr250-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.1-api</artifactId>
+      <version>1.0.0.Final</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>4.3.1.Final</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -60,5 +79,10 @@
             <url>http://repository.primefaces.org</url>
             <layout>default</layout>
         </repository>
-    </repositories>
+    <repository>
+      <id>unknown-jars-temp-repo</id>
+      <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
+      <url>file:${project.basedir}/lib</url>
+    </repository>
+  </repositories>
 </project>
