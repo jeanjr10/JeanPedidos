@@ -5,8 +5,10 @@
  */
 package org.JeanPedidos.DAO;
 
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import org.JeanPedidos.modelo.Produto;
 
@@ -22,5 +24,10 @@ public class ProdutoDAO {
     public void salvar(Produto produto){
         em.persist(produto);
     
+    }
+     public List<Produto> buscarTodos(){
+        TypedQuery<Produto> query = em.
+                createQuery("select c from Produto c", Produto.class);
+        return query.getResultList();
     }
 }
