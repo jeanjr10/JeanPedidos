@@ -11,7 +11,12 @@ and open the template in the editor.
 
     <h:head>
         <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+        <!--<link rel="stylesheet" type="text/css" href="css/estilo.css"/>-->
+               	<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     </h:head>
 
     <h:body>
@@ -29,7 +34,7 @@ and open the template in the editor.
                     <p:password id="senha" size="20" value="#{loginBean.senha}" />
 
                     <p:outputLabel />
-                    <p:commandButton value="Acessar" action="#{loginBean.login}" />
+                    <p:commandButton value="Acessar" action="#{loginBean.login()}" />
                 </h:panelGrid>
             </h:form>
         </div>
