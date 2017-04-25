@@ -23,7 +23,7 @@ and open the template in the editor.
 
     <h:body>
         <div id="login-dialog">
-            <center><h1>Login</h1></center>
+            <center><h2>Login</h2></center>
 
             <h:form id="frm">
                 <p:messages autoUpdate="true" />
@@ -37,10 +37,16 @@ and open the template in the editor.
 
                     <p:outputLabel />
                     <p:commandButton value="Acessar" action="#{loginBean.login()}" />
+                    <p:commandButton value="Sair" action="#{loginBean.logout()}" />
                 </h:panelGrid>
             </h:form>
         </div>
-            <p:commandButton value="Voltar" action="index.xhtml" />
+        <footer id="footer">
+		<p:commandButton value="Voltar" action="index.xhtml" />
+
+	</footer>
+
+            
     </h:body>
 
 </html>

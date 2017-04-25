@@ -6,29 +6,27 @@
 package org.JeanPedidos.DAO;
 
 import java.util.List;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
-import org.JeanPedidos.modelo.Produto;
+import org.JeanPedidos.modelo.Representante;
 
 /**
  *
  * @author JeanJunior
  */
-public class ProdutoDAO {
-     @PersistenceContext
+public class RepresentanteDAO {
+    @PersistenceContext
     private EntityManager em;
     
     @Transactional
-    public void salvar(Produto produto){
-        em.persist(produto);
+    public void salvar(Representante representante){
+        em.persist(representante);
     }
-     public List<Produto> buscarTodos(){
-        TypedQuery<Produto> query = em.
-                createQuery("select c from Produto c", Produto.class);
+     public List<Representante> buscarTodos(){
+        TypedQuery<Representante> query = em.
+                createQuery("select c from Representante c", Representante.class);
         return query.getResultList();
     }
 }

@@ -34,7 +34,7 @@ public class LoginBean {
 			this.usuario.setNome(this.nomeUsuario);
 			this.usuario.setDataLogin(new Date());
 			
-			return "/index?faces-redirect=true";
+			return "/?faces-redirect=true";
 		} else {
 			FacesMessage mensagem = new FacesMessage("Usuário/senha inválidos!");
 			mensagem.setSeverity(FacesMessage.SEVERITY_ERROR);
@@ -46,7 +46,7 @@ public class LoginBean {
 	
 	public String logout() {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-		return "/Login?faces-redirect=true";
+		return "/index?faces-redirect=true";
 	}
 	
 	public String getNomeUsuario() {

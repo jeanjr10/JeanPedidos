@@ -8,27 +8,26 @@ package org.JeanPedido.mb;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import org.JeanPedidos.DAO.ProdutoDAO;
-import org.JeanPedidos.modelo.Produto;
+import org.JeanPedidos.DAO.RepresentanteDAO;
+import org.JeanPedidos.modelo.Representante;
 
 /**
  *
  * @author JeanJunior
  */
-@Named(value = "cadastrarProdutoBean")
+@Named(value = "cadastrarRepresentantesBean")
 @RequestScoped
-public class CadastraProdutoBean {
-            
-    Produto produto = new Produto();
+public class CadastrarRepresentantesBean {
+    Representante representante = new Representante();
     @Inject
-    ProdutoDAO produtoDAO;
+    RepresentanteDAO representanteDAO;
     
     public void adicionar() {
-            produtoDAO.salvar(produto);
+            representanteDAO.salvar(representante);
         }
         //System.out.println(produto);
 
-    public Produto getProduto() {
-        return produto;
+    public Representante getRepresentante() {
+        return representante;
     }
 }

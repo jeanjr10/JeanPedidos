@@ -14,28 +14,32 @@
             <p:dataTable id="dtContratantes" var="produtos" value="#{ListarProdutos.produtos}">
                 <f:facet name="header">
                     <p:outputPanel>
-                        <h:outputText value="Pesquisar em todos os campos:" />
-                        <p:inputText style="width:150px" placeholder="Pressione uma tecla"/>
+                        <h:outputText value="Produtos" />
                     </p:outputPanel>
                 </f:facet>
 
-                <p:column headerText="ID" width="10">
+                <p:column headerText="ID" sortBy="#{produtos.id}" width="30" 
+                          filterBy="#{produtos.id}" filterMatchMode="contains">
                     <h:outputText value="#{produtos.id}"/>
                 </p:column>
-                <p:column headerText="Nome" sortBy="#{produtos.nome}" width="150"
+                <p:column headerText="Nome" sortBy="#{produtos.nome}" width="100"
                           filterBy="#{produtos.nome}" filterMatchMode="contains">
                     <h:outputText value="#{produtos.nome}"/>
                 </p:column>
 
-                <p:column headerText="Categoria" width="30">
-                    <h:outputText value="#{produtos.nome}"/>
+                <p:column headerText="Categoria" sortBy="#{produtos.categoria}" width="100" 
+                          filterBy="#{produtos.categoria}" filterMatchMode="contains">
+                    <h:outputText value="#{produtos.categoria}"/>
+        
                 </p:column>
 
-                <p:column headerText="Quant" width="30">
+                <p:column headerText="Quant" sortBy="#{produtos.quant}" width="30" 
+                          filterBy="#{produtos.quant}" filterMatchMode="contains">
                     <h:outputText value="#{produtos.quant}"/>
                 </p:column>
 
-                <p:column headerText="Preço unt." width="30">
+                <p:column headerText="Preço unt." sortBy="#{produtos.preco}" width="40" 
+                          filterBy="#{produtos.preco}" filterMatchMode="contains">
                     <h:outputText value="#{produtos.preco}"/>
                 </p:column>
                 <f:facet name="footer">
@@ -44,6 +48,10 @@
             </p:dataTable>
 
         </h:form>
-        <center><p:commandButton value="Voltar" action="index.xhtml" /></center>
+        <footer id="footer">
+            <center><p:commandButton value="Voltar" action="index.xhtml" /></center>
+
+	</footer>
+
     </h:body>
 </html>
