@@ -25,7 +25,7 @@ and open the template in the editor.
         <div id="login-dialog">
             <center><h2>Login</h2></center>
             <h:form id="frm">
-                <p>#{usuario.nome}</p>
+                <p>#{usuario.nome} <p:commandButton value="Sair" action="#{loginBean.logout()}" /></p>
                 <p:messages autoUpdate="true" />
 
                 <h:panelGrid columns="2" styleClass="grid-login">
@@ -37,7 +37,7 @@ and open the template in the editor.
 
                     <p:outputLabel />
                     <p:commandButton value="Acessar" action="#{loginBean.login()}" />
-                    <p:commandButton value="Sair" action="#{loginBean.logout()}" />
+                    
                 </h:panelGrid>
             </h:form>
         </div>
