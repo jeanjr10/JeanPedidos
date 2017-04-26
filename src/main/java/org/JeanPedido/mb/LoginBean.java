@@ -34,7 +34,7 @@ public class LoginBean {
 			this.usuario.setNome(this.nomeUsuario);
 			this.usuario.setDataLogin(new Date());
 			
-			return "/?faces-redirect=true";
+			return "/index?faces-redirect=true";
 		} else {
 			FacesMessage mensagem = new FacesMessage("Usuário/senha inválidos!");
 			mensagem.setSeverity(FacesMessage.SEVERITY_ERROR);

@@ -35,11 +35,15 @@
 
                 </p:panelGrid>
                 <center><p:commandButton value="Cadastrar" action="#{cadastrarProdutoBean.adicionar()}" style="width: 230px !important;"/>
-                <p:commandButton value="Limpar campos" type="reset" style="width: 230px !important;"/></center>
+                <p:commandButton value="Limpar Campos" type="reset" style="width: 230px !important;"/>
+                </center>
+                
             </h:form>
         </div>
         <footer id="footer">
+            <center><p:commandButton value="Finalizar" action="listarProdutosBean.xhtml" /></center>
 		<p:commandButton value="Voltar" action="index.xhtml" />
+                
 
 	</footer>
 

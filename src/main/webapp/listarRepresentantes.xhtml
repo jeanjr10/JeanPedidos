@@ -7,19 +7,10 @@
     <h:head>
         <title>Painel</title>
             <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
-            
-            <meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-                
     </h:head>
     <h:body>
         
-        
-        <div id="page-wrapper">
+         <div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header">
@@ -48,47 +39,39 @@
 				</header>
         </div>
         
+        
         <h:form id="form">
             <p:growl id="msgs" showDetail="true" />
-            <p:dataTable id="dtContratantes" var="produtos" value="#{ListarProdutos.produtos}">
+            <p:dataTable id="dtRepresentantes" var="representantes" value="#{ListarRepresentantes.representante}">
                 <f:facet name="header">
                     <p:outputPanel>
-                        <h:outputText value="Produtos" />
+                        <h:outputText value="Representantes" />
                     </p:outputPanel>
                 </f:facet>
 
-                <p:column headerText="ID" sortBy="#{produtos.id}" width="30" 
-                          filterBy="#{produtos.id}" filterMatchMode="contains">
-                    <h:outputText value="#{produtos.id}"/>
+                <p:column headerText="ID" sortBy="#{representantes.id}" width="30" 
+                          filterBy="#{representantes.id}" filterMatchMode="contains">
+                    <h:outputText value="#{representantes.id}"/>
                 </p:column>
-                <p:column headerText="Nome" sortBy="#{produtos.nome}" width="100"
-                          filterBy="#{produtos.nome}" filterMatchMode="contains">
-                    <h:outputText value="#{produtos.nome}"/>
+                <p:column headerText="Nome" sortBy="#{representantes.nome}" width="100"
+                          filterBy="#{representantes.nome}" filterMatchMode="contains">
+                    <h:outputText value="#{representantes.nome}"/>
                 </p:column>
 
-                <p:column headerText="Categoria" sortBy="#{produtos.categoria}" width="100" 
-                          filterBy="#{produtos.categoria}" filterMatchMode="contains">
-                    <h:outputText value="#{produtos.categoria}"/>
+                <p:column headerText="Cargo" sortBy="#{representantes.cargo}" width="100" 
+                          filterBy="#{representantes.cargo}" filterMatchMode="contains">
+                    <h:outputText value="#{representantes.cargo}"/>
         
                 </p:column>
-
-                <p:column headerText="Quant" sortBy="#{produtos.quant}" width="30" 
-                          filterBy="#{produtos.quant}" filterMatchMode="contains">
-                    <h:outputText value="#{produtos.quant}"/>
-                </p:column>
-
-                <p:column headerText="Preço unt." sortBy="#{produtos.preco}" width="40" 
-                          filterBy="#{produtos.preco}" filterMatchMode="contains">
-                    <h:outputText value="#{produtos.preco}"/>
-                </p:column>
                 <f:facet name="footer">
-                    No total temos #{ListarProdutos.produtos.size()} Produtos.
+                    No total temos #{ListarRepresentantes.representante.size()} representantes.
                 </f:facet>
             </p:dataTable>
 
         </h:form>
         <footer id="footer">
             <center><p:commandButton value="Voltar" action="index.xhtml" /></center>
+            <center><p:commandButton value="Finalizar" action="listarProdutosBean.xhtml" /></center>
 
 	</footer>
         <!-- Scripts -->
